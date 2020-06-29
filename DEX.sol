@@ -141,7 +141,7 @@ contract DEX{
                 now
                 );
             // we need to update the token traderBalances
-            if(side == Side.SELL){
+            if(side == Side.SELL){ 
                 traderBalances[msg.sender][ticker] -= matched;
                 traderBalances[msg.sender][DAI] += matched * orders[i].price;
                 traderBalances[orders[i].trader][ticker] += matched;
