@@ -133,7 +133,7 @@ contract DEX{
             emit NewTrade(
                 nextTradeId,
                 orders[i].id,
-                ticker,
+                ticker, 
                 orders[i].trader,// who created the order in order book
                 msg.sender, // who is buying in the market
                 matched, // amount will be equal to the liquidity we want 
