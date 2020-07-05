@@ -26,9 +26,9 @@ function App({web3, accounts, contracts}) {
     init();
   }, []);
 
-  // if(typeof user.selectedToken === 'undefined') {
-  //   return <div>Loading...</div>;
-  // }
+  if(typeof user.selectedToken === 'undefined') {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div id="app">

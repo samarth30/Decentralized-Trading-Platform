@@ -1,9 +1,6 @@
 import Web3 from 'web3';
 import Dex from './contracts/Dex.json';
-import Bat from './contracts/Bat.json';
-import Dai from './contracts/Dai.json';
-import Rep from './contracts/Rep.json';
-import Zrx from './contracts/Zrx.json';
+import ERC20Abi from './ERC20Abi.json';
 
 const getWeb3 = () => {
   return new Promise((resolve, reject) => {
@@ -31,7 +28,7 @@ const getWeb3 = () => {
       // Fallback to localhost; use dev console port by default...
       else {
         const provider = new Web3.providers.HttpProvider(
-          "http://localhost:7545"
+          "http://localhost:9545"
         );
         const web3 = new Web3(provider);
         console.log("No web3 instance injected, using Local web3.");
@@ -48,12 +45,11 @@ const getContracts = async web3 => {
     Dex.abi,
     deployedNetwork && deployedNetwork.address,
   );
-  // const tokens = await dex.methods.getTokens().call();
-  var tokens = [Dai,Rep,Bat,Zrx];
+  const tokens = await dex.methods.getTokens().call();
   const tokenContracts = tokens.reduce((acc, token) => ({
     ...acc,
     [web3.utils.hexToUtf8(token.ticker)]: new web3.eth.Contract(
-      token,
+      ERC20Abi,
       token.tokenAddress
     )
   }), {});
