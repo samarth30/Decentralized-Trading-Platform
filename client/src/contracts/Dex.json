@@ -72,7 +72,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -85,7 +86,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -98,7 +100,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -162,7 +165,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -181,7 +185,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -205,7 +210,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -229,7 +235,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -295,7 +302,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -320,7 +328,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -24855,9 +24864,73 @@
     "name": "solc",
     "version": "0.6.3+commit.8dda9521.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "5777": {
+      "events": {
+        "0xdb0c486e680ba8026643e6a85f8d157b5e7bcd4b32b54d564542570a9eb20416": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tradeId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "orderId",
+              "type": "uint256"
+            },
+            {
+              "indexed": true,
+              "internalType": "bytes32",
+              "name": "ticker",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "trader1",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "trader2",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "date",
+              "type": "uint256"
+            }
+          ],
+          "name": "NewTrade",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xdFf022D850A187D7A5e76812Ab0B401Bbb8e86e8",
+      "transactionHash": "0xb627d7f2a7cd1a1360d9153cbb81b44c502ce98bc8c67ecb11116b1f1f996717"
+    }
+  },
   "schemaVersion": "3.2.1",
-  "updatedAt": "2020-07-04T23:48:52.823Z",
+  "updatedAt": "2020-07-05T07:23:35.854Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

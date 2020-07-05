@@ -1,45 +1,44 @@
-import React , {useState , useEffect} from 'react'
-import web3 from 'web3';
-import App from './App';
-import {getWeb3,getContracts} from './utils.js'
-const LoadingContainer = () => {
-    const [web3,setWeb3] = useState(undefined);
-    const [contracts,setContracts] = useState(undefined);
-    const [accounts,setAccounts] = useState([]);
+import React, { useState, useEffect } from "react";
+import { getWeb3, getContracts } from './utils.js';
+import App from './App.js';
 
-    useEffect(() => {
-        const init = async()=>{
-            const web3 = await getWeb3();
-            const contracts = await getContracts();
-            const accounts = await web3.eth.getAccounts();
-            setWeb3(web3);
-            setContracts(contracts);
-            setAccounts(accounts);
-        }
-        init();
-    }, [])
+function LoadingContainer() {
+  const [web3, setWeb3] = useState(undefined);
+  const [accounts, setAccounts] = useState([]);
+  const [contracts, setContracts] = useState(undefined);
 
-    const isReady = ()=>{
-        return(
-            typeof web3 !== undefined &&
-            typeof contracts !== undefined &&
-            typeof accounts.length > 0
-        )
+  useEffect(() => {
+    const init = async () => {
+      const web3 = await getWeb3();
+      const contracts = await getContracts(web3);
+      const accounts = await web3.eth.getAccounts();
+      setWeb3(web3);
+      setContracts(contracts);
+      setAccounts(accounts);
     }
-if(!isReady){
+    init();
+  // eslint-disable-next-line
+  }, []);
+
+  const isReady = () => {
     return (
-        <div>
-            Loading ...
-        </div>
-    )
-}
- return (
-     <App
-     web3={web3}
-     contracts={contracts}
-     accounts = {accounts}
-     />
- )  
+      typeof web3 !== 'undefined' 
+      && typeof contracts !== 'undefined'
+      && accounts.length > 0
+    );
+  }
+
+  if (!isReady()) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <App
+      web3={web3}
+      accounts={accounts}
+      contracts={contracts}
+    />
+  );
 }
 
-export default LoadingContainer
+export default LoadingContainer;
