@@ -1,6 +1,6 @@
 [![HitCount](http://hits.dwyl.com/samarth30/Decentralized-Trading-Platform.svg)](http://hits.dwyl.com/samarth30/Decentralized-Trading-Platform)
 # Decentralized-Trading-Platform
-
+ 
 <img src="https://github.com/samarth30/Decentralized-Trading-Platform/blob/master/trading-app.png"/>
 
 
